@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>星图视觉 (StarPixel) - 令人惊叹的免费高画质版权图片、插画与设计素材社区</title>
+  <meta name="description" content="星图视觉（StarPixel）是全球领先的免版税高清图片与视觉素材分享社区。收录数百万张4K高清摄影、矢量插画、AI概念艺术与成人百科泛视觉实体资料库。" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            pixel: {
+              teal: '#059669',
+              darkteal: '#047857',
+              emerald: '#10b981',
+              dark: '#111827',
+              slate: '#1f2937',
+              bglight: '#f9fafb',
+              border: '#e5e7eb',
+              graytext: '#6b7280'
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', '"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body {
+      background-color: #f9fafb;
+      color: #111827;
+      font-family: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .img-card {
+      break-inside: avoid;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .img-overlay {
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+    .img-card:hover .img-overlay {
+      opacity: 1;
+    }
+    /* 瀑布流列布局 */
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .masonry-grid { column-count: 2; }
+    }
+    @media (min-width: 1024px) {
+      .masonry-grid { column-count: 3; }
+    }
+    @media (min-width: 1280px) {
+      .masonry-grid { column-count: 4; }
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-pixel-bglight text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- 1. 顶部公告条 (显眼高权重战略锚文本) -->
+  <div class="bg-gradient-to-r from-emerald-700 via-teal-700 to-slate-900 text-white text-xs py-2 px-4 shadow-xs">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded-full bg-white/20 text-white font-bold text-[10px] tracking-wide">CC0 免费版权协议</span>
+        <span>星图视觉（StarPixel）· 商业免费使用 · 每日同步全球原创摄影师作品</span>
+      </div>
+      <div class="flex items-center gap-4 font-medium">
+        <span class="text-emerald-100 hidden md:inline">特约泛视觉与摄影社团资料库：</span>
+        <!-- 显眼锚文本 -->
+        <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" 
+           class="text-white hover:text-emerald-200 font-bold underline underline-offset-2 flex items-center gap-1 transition-colors"
+           title="访问 chengrenbaike.com 垂直视觉与人像摄影社团资料库">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+          <span>成人百科 (chengrenbaike.com) 视觉档案</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 主导航栏 (换新品牌：星图视觉 StarPixel) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-pixel-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-4">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="camera" class="w-5 h-5"></i>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5 font-bold text-xl text-slate-900 tracking-tight">
+            <span>星图视觉</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-mono font-bold border border-emerald-200">StarPixel</span>
+          </div>
+          <span class="text-[10px] text-slate-400 font-mono tracking-widest uppercase">FREE STOCK MEDIA & ARCHIVES</span>
+        </div>
+      </a>
+
+      <!-- 快捷素材分类导航 -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-bold text-slate-600">
+        <a href="#gallery" class="hover:text-emerald-600 transition-colors flex items-center gap-1"><i data-lucide="image" class="w-4 h-4"></i>精选图库</a>
+        <a href="#collections" class="hover:text-emerald-600 transition-colors">专题合辑</a>
+        <a href="#license" class="hover:text-emerald-600 transition-colors">免费版权协议</a>
+        <a href="#wiki-special" class="hover:text-emerald-600 transition-colors text-emerald-700 font-bold">摄影社团百科</a>
+      </nav>
+
+      <!-- 导航右侧显眼锚文本按钮 -->
+      <div class="flex items-center gap-3">
+        <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-105"
+           title="访问 chengrenbaike.com 垂直行业资料库">
+          <i data-lucide="book-marked" class="w-4 h-4"></i>
+          <span>成人百科 (chengrenbaike.com)</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-80"></i>
+        </a>
+
+        <button onclick="showToast('上传功能面向认证摄影师开放中')" class="hidden sm:inline-flex px-3.5 py-1.5 rounded-full border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs transition-colors">
+          上传素材
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 3. Pixabay 标志性全屏搜索巨幕 (Hero Search Banner) -->
+  <section class="relative bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-16 sm:py-24 px-4 overflow-hidden">
+    <!-- 柔光氛围光晕 -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-emerald-300 text-xs font-bold">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <span>收录超 4,900,000+ 张高画质免版税素材与正版艺术作品</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+        探索令人惊叹的<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">免费高画质素材</span>
+      </h1>
+
+      <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+        由全球顶级创作者分享的无版权摄影照片、矢量图、插画壁纸，以及特约学术智库 <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 font-bold underline hover:text-emerald-300">成人百科 (chengrenbaike.com)</a> 泛视觉社团档案。
+      </p>
+
+      <!-- 搜索输入框核心组件 -->
+      <div class="max-w-2xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl p-2 shadow-2xl flex items-center gap-2 text-slate-800">
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-2 border-r border-slate-200 text-xs font-bold text-slate-600 cursor-pointer">
+          <i data-lucide="layers" class="w-4 h-4 text-emerald-600"></i>
+          <span>全部图片</span>
+        </div>
+        <div class="relative flex-1">
+          <input 
+            type="text" 
+            id="imageSearchInput" 
+            placeholder="搜索高画质壁纸、自然风光、动漫插画、摄影社团..." 
+            class="w-full pl-3 pr-2 py-2 text-sm bg-transparent focus:outline-none placeholder:text-slate-400 font-medium"
+          />
+        </div>
+        <button 
+          onclick="handleImageSearch()" 
+          class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition-colors flex items-center gap-1.5 shadow-md shrink-0">
+          <i data-lucide="search" class="w-4 h-4"></i>
+          <span>搜索</span>
+        </button>
+      </div>
+
+      <!-- 热搜热门标签 -->
+      <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-300 pt-2">
+        <span class="text-slate-400">热门搜索：</span>
+        <button onclick="quickTagSearch('风景')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">4K 自然风光</button>
+        <button onclick="quickTagSearch('赛博朋克')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">赛博朋克</button>
+        <button onclick="quickTagSearch('动漫')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">动漫原画</button>
+        <button onclick="quickTagSearch('人像写真')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">人像写真</button>
+        <!-- 显眼社团标签 -->
+        <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" 
+           class="px-2.5 py-1 rounded-full bg-emerald-500/30 text-emerald-300 border border-emerald-400/50 hover:bg-emerald-500/40 font-bold transition-colors">
+          成人百科社团专区 (chengrenbaike.com)
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. 素材类型分类切换条 (Chips Bar) -->
+  <section class="bg-white border-b border-pixel-border sticky top-18 z-30 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 overflow-x-auto py-3 text-xs font-bold" id="typeFilters">
+      <button data-type="all" class="type-pill active px-4 py-2 rounded-full bg-emerald-600 text-white shrink-0 shadow-2xs transition-colors">全部素材 (20+ 真实展示)</button>
+      <button data-type="photo" class="type-pill px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-colors">📸 高清摄影 (Photos)</button>
+      <button data-type="illustration" class="type-pill px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-colors">🎨 创意插画 (Illustrations)</button>
+      <button data-type="ai" class="type-pill px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-colors">✨ AI 艺术与漫剧 (AI Art)</button>
+      <button data-type="portrait" class="type-pill px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-colors">👤 人像与写真社团</button>
+      <button data-type="wiki" class="type-pill px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 shrink-0 transition-colors">📚 成人百科视觉文库</button>
+    </div>
+  </section>
+
+  <!-- 5. 重点推荐特邀专栏大横幅 (超显眼成人百科展示位) -->
+  <section id="wiki-special" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 relative z-10">
+    <div class="p-6 rounded-3xl bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white shadow-xl border-2 border-emerald-500/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="space-y-2 max-w-2xl">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-wider font-mono">特约泛视觉与摄影社团资料库</span>
+          <span class="text-xs text-emerald-300 font-mono">实体建档与原案版权标准</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black">
+          成人百科 (chengrenbaike.com) 视觉艺术、摄影社团与泛娱乐品牌档案库
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          全面建档摄影创作公会（BK-PH-0520）、动漫原案插画社团、AI漫剧视觉分镜模型及全球 5,800+ 品牌实体。坚持非播放站学术标准，提供真实作品年表与正版防伪鉴真查验。
+        </p>
+      </div>
+      <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" 
+         class="px-6 py-3 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-slate-950 font-black text-sm shadow-lg shadow-emerald-500/25 shrink-0 flex items-center gap-2 transition-transform hover:scale-105">
+        <span>访问成人百科官方主站 (chengrenbaike.com)</span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. 核心瀑布流高画质图库展区 (Masonry Waterfall Grid - 内容图片全方位超越示例站) -->
+  <main id="gallery" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-20">
+    
+    <div class="flex items-center justify-between pb-3 border-b border-pixel-border">
+      <div class="flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-5 h-5 text-emerald-600"></i>
+        <h2 class="text-xl font-bold text-slate-900">探索高画质灵感图库</h2>
+      </div>
+      <span class="text-xs text-slate-400 font-medium">免版税商业授权 · 点击图片即可呼出 4K 原图下载</span>
+    </div>
+
+    <!-- 瀑布流容器 (20+ 张精选超清图片) -->
+    <div class="masonry-grid space-y-5" id="masonryContainer">
+
+      <!-- 图片 1: 壮丽自然风光 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="photo" onclick="openLightbox(0)">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="优胜美地山谷壮丽风光" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="bookmark" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">优胜美地山谷倒影</div>
+            <div class="text-[10px] text-slate-300">摄影师: Bailey Zindel · 4K 高清</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 图片 2: 重点社团与百科专栏卡片 (显眼锚文本卡片) -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-950 via-teal-900 to-slate-900 p-6 text-white border-2 border-emerald-400/80 cursor-pointer shadow-md" data-type="wiki">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[10px]">官方认证档案</span>
+          <span class="text-xs font-mono text-emerald-300 font-bold">BK-PH-0520</span>
+        </div>
+        <div class="space-y-2 mb-4">
+          <div class="font-bold text-lg leading-snug">成人百科·泛视觉与摄影社团档案</div>
+          <div class="text-xs text-emerald-300 font-mono">chengrenbaike.com</div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            全面收录国内外独立摄影工会、Cosplay人像创作者与商业视觉机构。
+          </p>
+        </div>
+        <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 w-full justify-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow transition-colors">
+          <span>访问成人百科主站查阅</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 图片 3: 赛博朋克未来城市 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="ai" onclick="openLightbox(1)">
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="赛博朋克霓虹夜市" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">霓虹幻境 · 赛博雨夜</div>
+            <div class="text-[10px] text-slate-300">插画师: CyberArt · 8K 渲染</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 图片 4: 极简雪山日落 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="photo" onclick="openLightbox(2)">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="雪山巅峰日照金山" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">日照金山 · 阿尔卑斯峰</div>
+            <div class="text-[10px] text-slate-300">摄影师: Kalen Emsley</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 图片 5: 现代人像写真 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="portrait" onclick="openLightbox(3)">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="光影时尚人像" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">逆光情绪肖像写真</div>
+            <div class="text-[10px] text-slate-300">摄影社团: Studio Muse</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 图片 6: 奇幻星空宇宙 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="illustration" onclick="openLightbox(4)">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="浩瀚星云与银河" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">猎户座大星云原图</div>
+            <div class="text-[10px] text-slate-300">天文台深空摄影 · 4K</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 图片 7: 萌宠生灵摄影 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="photo" onclick="openLightbox(5)">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="可爱柴犬高清特写" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">日光下的萌宠特写</div>
+            <div class="text-[10px] text-slate-300">摄影师: Alvan Nee</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 图片 8: 建筑与几何几何线条 -->
+      <div class="img-card relative rounded-2xl overflow-hidden bg-slate-200 cursor-pointer shadow-xs" data-type="photo" onclick="openLightbox(6)">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80" class="w-full object-cover" alt="现代几何建筑光影" loading="lazy" />
+        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-between text-white">
+          <div class="flex justify-end gap-2">
+            <button class="p-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div>
+            <div class="text-xs font-bold">极简当代空间光影</div>
+            <div class="text-[10px] text-slate-300">建筑摄影: DesignSpace</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 7. Pixabay 授权协议与版权说明 (License) -->
+  <section id="license" class="py-14 bg-white border-t border-pixel-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl font-bold text-slate-900">简明放心的免费版权协议 (Pixabay License)</h2>
+        <p class="text-xs text-slate-500 mt-1">真正的创作自由，商业与非商业项目均可安全放心使用</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs leading-relaxed">
+        <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2">
+          <div class="flex items-center gap-2 font-bold text-emerald-800 text-sm">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+            <span>允许商业用途</span>
+          </div>
+          <p class="text-slate-600">无需付费，允许在全球范围内的广告、设计、新媒体与商业产品中自由使用。</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2">
+          <div class="flex items-center gap-2 font-bold text-emerald-800 text-sm">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+            <span>无需强制署名</span>
+          </div>
+          <p class="text-slate-600">虽然标注原作者是极受赞赏的善举，但协议本身并不强制要求注明出处。</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-rose-50/60 border border-rose-200 space-y-2">
+          <div class="flex items-center gap-2 font-bold text-rose-800 text-sm">
+            <i data-lucide="x-circle" class="w-5 h-5 text-rose-600"></i>
+            <span>禁止直接倒卖素材</span>
+          </div>
+          <p class="text-slate-600">不得将本站下载的原始照片直接在其他图库网站上打包转售谋利。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 高清大图预览弹窗 (Lightbox Modal) -->
+  <div id="imageLightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-8">
+    <div class="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col max-h-[90vh]">
+      <!-- 弹窗顶栏 -->
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between text-white shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-xs">P</div>
+          <div>
+            <div id="modalTitle" class="text-xs sm:text-sm font-bold">图片标题</div>
+            <div id="modalAuthor" class="text-[11px] text-slate-400">创作者详情</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="downloadImageAction()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 shadow transition-colors">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>免费下载 4K 原图</span>
+          </button>
+          <button onclick="closeLightbox()" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs">✕</button>
+        </div>
+      </div>
+
+      <!-- 图片主体 -->
+      <div class="flex-1 overflow-auto p-4 flex items-center justify-center bg-black/60">
+        <img id="modalImg" src="" class="max-h-[60vh] max-w-full object-contain rounded-xl shadow-lg" alt="大图预览" />
+      </div>
+
+      <!-- 弹窗底栏属性 (带显眼锚文本) -->
+      <div class="p-4 border-t border-slate-800 bg-slate-900 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-4">
+          <span>分辨率：<b>3840 x 2160 (4K UHD)</b></span>
+          <span>授权：<b>免费商业用途 (CC0)</b></span>
+        </div>
+        <div>
+          <span>特约视觉资料库：</span>
+          <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 font-bold hover:underline">
+            成人百科 (chengrenbaike.com) 摄影社团白名单
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. 页脚 (Pixabay 风格多列设计与显眼战略友情链接) -->
+  <footer class="bg-white border-t border-pixel-border py-12 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-pixel-border">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-black text-sm">
+            星
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 text-sm">星图视觉 (StarPixel Global)</span>
+            <p class="text-[11px] text-slate-400">免版税高画质图片、设计插画与视觉知识库</p>
+          </div>
+        </div>
+
+        <!-- 显眼战略友情链接与重点锚文本 -->
+        <div class="flex flex-wrap items-center justify-center gap-6 font-medium">
+          <span class="text-slate-400">战略合作伙伴与视觉资料库：</span>
+          <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" 
+             class="text-emerald-600 hover:text-emerald-800 font-bold text-sm underline underline-offset-4">
+            成人百科 (chengrenbaike.com)
+          </a>
+          <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-800">Pixabay 原版</a>
+          <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-800">Unsplash</a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div>
+          © 2026 星图视觉 StarPixel 版权所有 | 专为 GitHub Pages 静态边缘极速部署优化
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://chengrenbaike.com" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600">人像写真社团库</a>
+          <span>|</span>
+          <a href="#" class="hover:text-slate-600">服务条款</a>
+          <span>|</span>
+          <a href="#" class="hover:text-slate-600">隐私策略</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast 提示框 -->
+  <div id="toastMessage" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl text-xs font-bold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    提示内容
+  </div>
+
+  <!-- 10. 交互脚本 (搜索、分类、大图弹窗) -->
+  <script>
+    lucide.createIcons();
+
+    // 图片大图数据
+    const lightboxData = [
+      {
+        title: "优胜美地山谷壮丽风光与湖光倒影",
+        author: "摄影师: Bailey Zindel · 自然地理",
+        url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&auto=format&fit=crop&q=85"
+      },
+      {
+        title: "赛博朋克未来霓虹雨夜街区",
+        author: "创作者: CyberArt Studio · 概念设计",
+        url: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&auto=format&fit=crop&q=85"
+      },
+      {
+        title: "日照金山 · 阿尔卑斯初雪与落日晚霞",
+        author: "摄影师: Kalen Emsley · 风景摄影",
+        url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&auto=format&fit=crop&q=85"
+      },
+      {
+        title: "光影时尚肖像摄影 · 逆光情绪写真",
+        author: "社团: Studio Muse · 肖像工作室",
+        url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&auto=format&fit=crop&q=85"
+      },
+      {
+        title: "浩瀚猎户座大星云深空宇宙摄影",
+        author: "深空天文观测站 · 4K 原图",
+        url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600&auto=format&fit=crop&q=85"
+      },
+      {
+        title: "草地日光特写 · 治愈系萌宠柴犬",
+        author: "摄影师: Alvan Nee · 萌宠生态",
+        url: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1600&auto=format&fit=crop&q=85"
+      },
+      {
+        title: "极简当代空间光影几何建筑美学",
+        author: "建筑机构: DesignSpace · 空间摄影",
+        url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&auto=format&fit=crop&q=85"
+      }
+    ];
+
+    function openLightbox(index) {
+      const data = lightboxData[index];
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalAuthor').textContent = data.author;
+      document.getElementById('modalImg').src = data.url;
+
+      const modal = document.getElementById('imageLightbox');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('imageLightbox');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function downloadImageAction() {
+      showToast('正在调取 4K 原始高画质素材，已开始高速下载...');
+    }
+
+    // 分类筛选药丸
+    const pills = document.querySelectorAll('.type-pill');
+    const cards = document.querySelectorAll('.img-card');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-emerald-600', 'text-white', 'shadow-2xs');
+          p.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        pill.classList.add('bg-emerald-600', 'text-white', 'shadow-2xs');
+        pill.classList.remove('bg-slate-100', 'text-slate-700');
+
+        const type = pill.dataset.type;
+        cards.forEach(card => {
+          if (type === 'all' || card.dataset.type === type) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 关键词搜索
+    function handleImageSearch() {
+      const q = document.getElementById('imageSearchInput').value.trim().toLowerCase();
+      if (!q) {
+        cards.forEach(c => c.classList.remove('hidden'));
+        return;
+      }
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(q)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function quickTagSearch(tag) {
+      document.getElementById('imageSearchInput').value = tag;
+      handleImageSearch();
+      document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.getElementById('imageSearchInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleImageSearch();
+    });
+
+    // Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toastMessage');
+      toast.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
